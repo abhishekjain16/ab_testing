@@ -1,0 +1,38 @@
+<%= form_for [@experiment, @variation] do |f| %>
+  <ul style="border-top: none;">
+    <li class="input-data">
+      <%= f.label :name, "Variation Name:" %>
+      <%= f.text_field :name, :class=>"textbox", :size => 70 %>
+      <span id="name", class="inline-error"></span>
+    </li>
+
+    <br class="clear"/>
+
+    <li class="button">
+      <%= f.submit "Submit" , :class=> 'submit savebut'%>
+    </li>    
+  </ul>
+
+  <div class="original"></div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var link = "<%= @experiment.relative_path %>"
+    $('div.original').load(link);
+
+    $('div').mouseover(function(e){
+      $target = $(e.target).parents('div').removeClass('hover').first();
+      $target.addClass('hover');
+    });
+    $('div').mouseout(function(e){
+     $('div').removeClass('hover');
+    });
+  })
+</script>
+
+<style type="text/css">
+.hover {
+    background: orange;
+}
+</style>

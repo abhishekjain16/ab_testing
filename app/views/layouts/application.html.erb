@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= yield %>
+<script type="text/javascript">
+  <% if @experiments.present? %>
+    $(document).ready(function(){
+      <% @experiments.each do |exp| %>
+        selector = "<%= exp.selector %>";
+        success_method = "<%= exp.success_method %>"
+        success_selector = "<%= exp.success_selector %>"
+        $(selector).html('');
+        <% variation = exp.variations.sample %>
+        <% variation.increment!(:render_count) %>
+        $("<%=raw escape_javascript(variation.data) %>").appendTo($(selector));
+        if (success_method == "Selector Click") {
+          $(success_selector).on("click", function(){
+            id = "<%= variation.id %>"
+            $.ajax ({
+              method : "POST",
+              url : "/variations/increment?v="+id,
+              success : function(message) {
+                console.log(message)
+              }
+            });
+          });
+        }
+
+        else if(success_method == "Message Based") {
+
+        }
+
+        else if(success_method == "Custom") {
+
+        }
+      <% end %>
+    })
+  <% end %>
+</script>
+</body>
+</html>

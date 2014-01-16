@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  experiment_id_id: 
+  data: MyText
+  render_count: 1
+  success_count: 1
+
+two:
+  experiment_id_id: 
+  data: MyText
+  render_count: 1
+  success_count: 1
