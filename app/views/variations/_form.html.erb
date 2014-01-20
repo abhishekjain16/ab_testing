@@ -21,12 +21,19 @@
     var link = "<%= @experiment.relative_path %>"
     $('div.original').load(link);
 
-    $('div').mouseover(function(e){
-      $target = $(e.target).parents('div').removeClass('hover').first();
-      $target.addClass('hover');
-    });
-    $('div').mouseout(function(e){
-     $('div').removeClass('hover');
+    $('div.original').mouseover(function(e){
+      $target = $(e.target);
+      if ( $target.is( "div" ) ) {
+        $target.addClass('hover');
+      }
+      else {
+        $nextDiv = $target.parents('div').first();
+        $nextDiv.addClass('hover')
+      }
+      $('div.hover').mouseout(function(e){
+        $(this).removeClass('hover');
+      });
+
     });
     $('div.original div').draggable();
   })
@@ -34,6 +41,6 @@
 
 <style type="text/css">
 .hover {
-    background: orange;
+  background: orange;
 }
 </style>
