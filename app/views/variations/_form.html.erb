@@ -20,7 +20,10 @@
   $(document).ready(function() {
     var link = "<%= @experiment.relative_path %>"
     $('div.original').load(link);
-
+    setTimeout(function() {
+      $('div.original div').draggable();
+    }, 2000);
+    
     $('div.original').mouseover(function(e){
       $target = $(e.target);
       if ( $target.is( "div" ) ) {
@@ -35,7 +38,7 @@
       });
 
     });
-    $('div.original div').draggable();
+    
   })
 </script>
 
