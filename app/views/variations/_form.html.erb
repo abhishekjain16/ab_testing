@@ -38,12 +38,21 @@
       });
 
     });
-    
+
+    $('body').on('click', 'div.hover', function(){
+      $current_div = $(this);
+      $(this).addClass('selected')
+      html_edit_view = new ab_test.ModalPopUp($("<div></div>").attr('id', 'html_edit_popup').html('<%= j(render :partial => "edit_form")%>'));
+      html_edit_view.show();
+      $('textarea').val($(this).html())
+      $("form").submit(function(e){
+        e.preventDefault();
+        data_html = $('textarea').val();  
+        $('div.selected').html(data_html)
+        $('div.selected').removeClass('selected');
+        $('div#html_edit_popup').dialog("close");
+      });
+    })
+
   })
 </script>
-
-<style type="text/css">
-.hover {
-  background: orange;
-}
-</style>

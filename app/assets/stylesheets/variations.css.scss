@@ -1,3 +1,12 @@
 // Place all the styles related to the variations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.test_container{ background:#fff; float: left; z-index:999; box-shadow:0 0 10px #000; position:fixed !important;}
+.test_container .ui-dialog-titlebar {width:30px; height:30px; position:absolute; right:-10px; top:-10px; z-index:99999; }
+
+.test_container .ui-dialog-titlebar .ui-dialog-title { display:none;}
+.test_container .ui-button{width:30px; height:30px; border-radius:30px; }
+.test_container textarea{margin-left:30px;}
+.hover {
+  background: orange;
+}
