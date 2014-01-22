@@ -25,7 +25,7 @@
     });
     $('div.original').load(link);
     setTimeout(function() {
-      $('div.original div').draggable();
+      $('div.original div').draggable({containment: "div.original"});
     }, 2000);
     
     $('div.original').mouseover(function(e){
@@ -42,7 +42,9 @@
       });
 
     });
-
+    $('body').on('click', 'div.original a', function(e){
+      e.preventDefault();
+    });
     $('body').on('click', 'div.hover', function(){
       $current_div = $(this);
       $(this).addClass('selected')
