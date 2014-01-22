@@ -15,10 +15,10 @@ class ApplicationController < ActionController::Base
   # end
 
   def fetch_experiments
-    @experiments = Experiment.with_variations.where(:relative_path => request.path)
+    @experiments_with_variation = Experiment.with_variations.where(:relative_path => request.path)
   end
 
   def restricted_to_experiment?
-    controller_name == "experiments" || controller_name == "variations"
+    controller_name == "experiments" || controller_name == "variations" || params[:no_show].present?
   end
 end

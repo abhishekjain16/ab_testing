@@ -18,7 +18,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    var link = "<%= @experiment.relative_path %>"
+    var link = "<%= @experiment.relative_path %>?no_show='yes'"
     $("form.edit_variation").submit(function(e) {
       $("div.original div").removeClass("ui-draggable");
       $("#variation_data").val($("div.original").html())
