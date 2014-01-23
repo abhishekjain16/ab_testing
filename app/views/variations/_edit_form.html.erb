@@ -1,4 +1,4 @@
-<%= form_tag(experiments_path, method: "post") do %>
+<%= form_tag(experiments_path, method: "post", :class => "edit_popup") do %>
   <%= label_tag(:q, "Edit Html") %><br/>
   <%= text_area_tag(:q, nil, :rows => 20, :cols => 60) %>
   <%= submit_tag("Save and Preview") %>

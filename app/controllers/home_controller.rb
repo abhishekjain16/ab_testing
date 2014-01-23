@@ -3,6 +3,6 @@ class HomeController < ApplicationController
   def index
   end
 
-  def vinsol
+  def dealdey
   end
 end

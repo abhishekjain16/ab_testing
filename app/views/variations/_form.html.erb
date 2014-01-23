@@ -1,4 +1,4 @@
-<%= form_for [@experiment, @variation], :class => "variation_form" do |f| %>
+<%= form_for [@experiment, @variation], :html => {:class => "variation" } do |f| %>
   <ul style="border-top: none;">
     <li class="input-data">
       <%= f.label :name, "Variation Name:" %>
@@ -19,7 +19,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     var link = "<%= @experiment.relative_path %>?no_show='yes'"
-    $("form.variation_form").submit(function(e) {
+    $("form.variation").submit(function(e) {
       $("div.original div").removeClass("ui-draggable");
       $("#variation_data").val($("div.original").html())
     });
@@ -51,7 +51,7 @@
       html_edit_view = new ab_test.ModalPopUp($("<div></div>").attr('id', 'html_edit_popup').html('<%= j(render :partial => "edit_form")%>'));
       html_edit_view.show();
       $('textarea').val($(this).html())
-      $("form").submit(function(e){
+      $("form.edit_popup").submit(function(e){
         e.preventDefault();
         data_html = $('textarea').val();  
         $('div.selected').html(data_html)

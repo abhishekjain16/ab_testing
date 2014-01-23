@@ -5,6 +5,10 @@ TestApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  resources :users, :only => [] do
+    post :sign_in, :on => :collection
+  end
+
   resources :experiments do
     resources :variations, :path => :variation
   end
@@ -16,8 +20,9 @@ TestApp::Application.routes.draw do
   end
 
   resources :home, :only => :index do
-    get :vinsol, :on => :collection
+    get :dealdey, :on => :collection
   end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
