@@ -16,10 +16,12 @@
         selector = "<%= exp.selector %>";
         success_method = "<%= exp.success_method %>"
         success_selector = "<%= exp.success_selector %>"
-        $('body').html('');
+        // $('body').html('');
         <% variation = exp.variations.sample %>
         <% variation.increment!(:render_count) %>
-        $("<%=raw escape_javascript(variation.data) %>").appendTo($('body'));
+      $('body').html("<%=raw escape_javascript(variation.data) %>");
+
+        
         if (success_method == "Selector Click") {
           $(success_selector).on("click", function(){
             id = "<%= variation.id %>"

@@ -179,6 +179,14 @@ rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-wid
 </div>    <div id="wrapper">
       <div class="livechat"> 
       <div id="LiveChat_1320988382"><div id="LiveChat_1320988382_button"><a id="LiveChat_1320988382_btn" href="https://secure.livechatinc.com/licence/1080147/open_chat.cgi?groups=0&amp;session_id=S1373953088.4a4c7b5e15" target="chat_1080147_secure.livechatinc.com"><img src="//livechat.s3.amazonaws.com/1080147/0/button/online/7ad8719f0af61ce0621ba9453d2360d0.gif" style="border: 0px;"></a></div></div>
+      <script type="text/javascript">
+        var __lc_buttons = __lc_buttons || [];
+         __lc_buttons.push({
+           elementId: 'LiveChat_1320988382',
+           language: 'en',
+           skill: '0'
+         });
+       </script>
 
     </div>
       <div id="header">
@@ -875,162 +883,6 @@ rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-wid
 </div>
 
 
-      <script type="text/javascript">
-//<![CDATA[
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', "UA-22289968-1"]);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    
-//]]>
-</script>
-      <script type="text/javascript">
-        $(document).ready(function(){
-          initalize_back_to_top_script();
-
-            binding_ajax_call($("form#log_in_form"))
-  binding_ajax_call($("form#new_user"))
-  $(".select-box select").live("change keyup", function(){
-        var selectVal = $(this).val();
-        $(this).parents(".select-box").find("strong.valupdate").text(selectVal);
-  });
-  window.fbAsyncInit = function() {
-    FB.init({ apiKey: "161472460571934", status: true, cookie: true, xfbml: true});
-    FB.Event.subscribe('edge.create', function(response) {
-      if(!response.match(/\/deals\//)){
-        if (navigator.userAgent.indexOf("MSIE")!=-1){
-           $('.dealdey-facebook-likes iframe ').attr("style", "position:relative !important;top:37px !important;left:0px !important;");
-        }
-        if (navigator.userAgent.indexOf("iPad")!=-1){
-          $('#fb_comments_hack_web').focus().blur().blur();
-        }
-      }
-    });
-    FB.Event.subscribe('edge.remove', function(response) {
-    });
-    FB.Event.subscribe('comment.remove', function(response) {
-      var data = 'id='+response.href+'&comment_id='+response.commentID
-      remote_function("DELETE", "/facebook_comments/destroy_comment?type=fb_comments_count", data, true, null, null );
-    });
-    FB.Event.subscribe('comment.create', function(response){
-      var data = 'response_href='+response.href+'&parent_comment_id='+response.parentCommentID+'&comment_id='+response.commentID
-      remote_function("POST", "/facebook_comments?type=fb_comments_count", data, true, null, null );
-    });
-  };
-  (function() {
-      var e = document.createElement('script'); e.async = true;
-      e.src = "http://connect.facebook.net/en_US/all.js";
-      //e.src = "/javascripts/facebook/all.js";
-      document.getElementById('fb-root').appendChild(e);
-    }());
-  function facebookConnect(func){
-    function handleResponse(response){
-      if(response.session) {
-        func(); // user provided his data
-      } else {}   // user cancelled login
-    }
-    FB.login(handleResponse, { perms:"email" });
-  }
-  initalize_header_marquee('feed-marquee');
-  $("ul#feed-marquee").show();
-  FaceboxStylePopUp.init('#invite_friend', { dialogClass: "invite-popup" });
-  $(".header-links #user_email").Watermark("Email");
-  $(".header-links #user_password").Watermark("Password");
-  $(".header-links #user_firstname").Watermark("First Name");
-  $(".header-links #user_lastname").Watermark("Last Name");
-  $(".header-links .signup-header #user_email").Watermark("Email");
-  $(".header-links #user_mobile").Watermark("Mobile");
-  $(".header-links .signup-header #user_password").Watermark("Password");
-  $(".header-links #user_password_confirmation").Watermark("Password");
-  $('.button-orange-small input[type=submit]').click(function(){
-    $.Watermark.HideAll();
-  });
-
-  $('li.category-links').hover( function() {
-    $('ul.category-drop').show('blind');
-    }, function(){
-      $('ul.category-drop').hide('blind', function(){
-    });
-  });
-  $('ul.cart-header').hover( function() {
-    //$('div.cart-details-hover').stop(true, true).delay(300).slideDown(400, "easeOutBounce");
-    $('div.cart-details-hover').show('blind');
-    }, function(){
-      //$('div.cart-details-hover').stop(true, true).delay(300).fadeOut(500, "easeInCubic");
-      $('div.cart-details-hover').hide('fade');
-    }
-  );
-    drop_down_categories()
-  $('.deal-description .buy-now a.buy-now-button').click(function(){
-    $(this).attr('href', 'http://www.dealdey.com/cart');
-  });
-  feed_refresh_time = 1390228594
-
-  function refresh_feeds(){
-    setInterval(function(){
-      var timestamp = Math.round((new Date()).getTime() / 1000)
-      if(feed_refresh_time == timestamp){
-       $.ajax({
-                type: 'POST',
-                url: "/feeds/get_recent_feeds"
-               });
-      }
-    }, 1000);    
-  }
-
-  refresh_feeds();
-   press_article_length = $('.press_articles').length
-   random_press_article = $('.press_articles')[ Math.floor(Math.random()* press_article_length )]
-   $(random_press_article).show();
-        });
-      </script>
-      
-      
-        <script type="text/javascript">
-  setTimeout(function(){var a=document.createElement("script");
-  var b=document.getElementsByTagName("script")[0];
-  a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0018/8257.js?"+Math.floor(new Date().getTime()/3600000);
-  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-  </script>
-
-      <script type="text/javascript">
-//<![CDATA[
-
-        // Chartbeat <body> Code.
-        var _sf_async_config = { uid: 36446, domain: 'dealdey.com' };
-        (function() {
-          function loadChartbeat() {
-            window._sf_endpt = (new Date()).getTime();
-            var e = document.createElement('script');
-            e.setAttribute('language', 'javascript');
-            e.setAttribute('type', 'text/javascript');
-            e.setAttribute('src', (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
-            document.body.appendChild(e);
-          };
-          var oldonload = window.onload;
-          window.onload = (typeof window.onload != 'function') ?
-          loadChartbeat : function() { oldonload(); loadChartbeat(); };
-        })();
-      
-//]]>
-</script>
-      
-      <script type="text/javascript">
-        var __lc = {};
-        __lc.license = 1080147 ;
-        __lc.params = [];
-        (function() {
-          var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-          lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-        })();
-      </script>
     
     </div>
     <script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
