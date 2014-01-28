@@ -19,8 +19,9 @@
         // $('body').html('');
         <% variation = exp.variations.sample %>
         <% variation.increment!(:render_count) %>
+        val = $("input[name=authenticity_token]").val();
       $('body').html("<%=raw escape_javascript(variation.data) %>");
-
+        $("input[name=authenticity_token]").val(val);
         
         if (success_method == "Selector Click") {
           $(success_selector).on("click", function(){
