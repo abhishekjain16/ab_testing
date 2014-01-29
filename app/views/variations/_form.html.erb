@@ -5,6 +5,11 @@
       <%= f.text_field :name, :class=>"textbox", :size => 70 %>
       <span id="name", class="inline-error"></span>
     </li>
+    <li class="input-data">
+      <%= f.label :render_percentage, "Give Percentage(frequency with which it should be displayed(0-100)):" %>
+      <%= f.text_field :render_percentage, :class=>"textbox", :size => 10 %>
+      <span id="name", class="inline-error"></span>
+    </li>
       <%= f.text_field :data, :class => "hidden" %>
     <br class="clear"/>
 
