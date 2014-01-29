@@ -58,7 +58,7 @@ class VariationsController < ApplicationController
   end
 
   def variations_params
-    params.require(:variation).permit([:name, :data])
+    params.require(:variation).permit([:name, :data, :render_percentage])
   end
 
 end

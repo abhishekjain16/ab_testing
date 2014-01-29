@@ -16,8 +16,7 @@
         selector = "<%= exp.selector %>";
         success_method = "<%= exp.success_method %>"
         success_selector = "<%= exp.success_selector %>"
-        // $('body').html('');
-        <% variation = exp.variations.sample %>
+        <% variation = exp.variations.fetch_with_probablity_and_percentage %>
         <% variation.increment!(:render_count) %>
       $('body').html("<%=raw escape_javascript(variation.data) %>");
 
