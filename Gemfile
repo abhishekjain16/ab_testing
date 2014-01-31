@@ -20,9 +20,11 @@ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem "jquery-ui-rails"
+gem "jquery-ui-rails", '~> 4.0.0'
 
 gem 'httparty'
+gem 'spree', github: 'spree/spree', branch: '2-1-stable'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'

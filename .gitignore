@@ -15,3 +15,5 @@ config/database.yml
 /log/*.log
 /tmp
 db/schema.rb
+db/.DS_Store
+db/migrate/.DS_Store
