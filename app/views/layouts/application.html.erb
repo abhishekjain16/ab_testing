@@ -10,6 +10,7 @@
 
   <%= yield %>
 <script type="text/javascript">
+
   <% if @experiments_with_variation.present? %>
     $(document).ready(function(){
       <% @experiments_with_variation.each do |exp| %>

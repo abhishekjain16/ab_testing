@@ -26,6 +26,20 @@
     $('div.original').load(link);
     setTimeout(function() {
       $('div.original div').draggable({containment: "div.original"});
+      $('div.original *').colpick({
+      colorScheme:'dark',
+      layout:'rgbhex',
+      color:'ff8800',
+      onSubmit:function(hsb,hex,rgb,el) {
+        $(el).css('background-color', '#'+hex);
+        $(el).colpickHide();
+      }
+    })
+
+    $('div.original a, input[type="submit"]').on( "click", function(e) {
+      e.preventDefault();
+    });
+
     }, 2000);
     
     $('div.original').mouseover(function(e){
@@ -42,10 +56,8 @@
       });
 
     });
-    $('body').on('click', 'div.original a', function(e){
-      e.preventDefault();
-    });
-    $('body').on('click', 'div.hover', function(){
+
+    $('body').on('contextmenu', 'div.hover', function(){
       $current_div = $(this);
       $(this).addClass('selected')
       html_edit_view = new ab_test.ModalPopUp($("<div></div>").attr('id', 'html_edit_popup').html('<%= j(render :partial => "edit_form")%>'));
